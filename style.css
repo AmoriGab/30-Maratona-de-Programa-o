@@ -1,0 +1,845 @@
+/* Reset básico e Box-sizing para evitar scroll lateral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* IMPORANTE para padding e border não causarem scroll */
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden; /* Garante que não haverá scroll horizontal no body */
+}
+
+/* Container Principal para o conteúdo do site */
+.container {
+  max-width: 1600px; /* Aumentado para preencher mais a tela em monitores grandes */
+  width: 90%;      /* Garante que ocupe 90% da largura da tela, com margem */
+  margin: 0 auto;
+  padding: 2rem;   /* Padding padrão */
+}
+
+/* Menu de Navegação */
+.menu {
+  background: #fff;
+  color: #ce1126;
+  height: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.menu .logo {
+  height: 300px;
+  width: 300px;
+  margin-right: 2rem;
+  margin-left: 100px;
+}
+
+.menu-item-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu nav {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-grow: 1; 
+  margin: 0 1rem; 
+}
+
+.menu nav .menu-main-link,
+.menu nav a[href="#local"] {
+  color: #ce1126;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 1.3rem; /* Tamanho padrão para desktop */
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0 5px;
+}
+
+.menu nav .menu-main-link:hover,
+.menu nav a[href="#local"]:hover {
+  color: #910e1c;
+}
+
+.submenu-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1001;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  left: 0;
+  top: 100%;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.submenu-content.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu-content a {
+  color: #111;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: normal;
+  margin-left: 0;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu-content a:hover {
+  background-color: #e0e0e0;
+  color: #ce1126;
+}
+
+.header-realizacao {
+  display: flex;
+  flex-direction: column; /* Título em cima, logos embaixo */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  text-align: center;
+  margin-left: 2rem; /* Espaçamento do menu */
+  flex-shrink: 0; /* Impede que ele encolha demais se houver pouco espaço */
+}
+
+.header-realizacao .realizacao-titulo {
+  font-size: 0.85rem; /* Tamanho do texto "Realização" */
+  color: #666;
+  margin-bottom: 20px; /* Espaço entre o título e as imagens */
+  font-weight: bold;
+  white-space: nowrap; /* Impede que o título quebre linha */
+  margin-left: 200px;
+}
+
+.header-realizacao .realizacao-logos {
+  display: flex;
+  justify-content: center; /* Centraliza as imagens */
+  align-items: center;
+  gap: 8px; /* Espaço entre as imagens */
+  margin-left: 200px;
+}
+
+.header-realizacao .realizacao-logos img {
+  width: 100px;  /* Largura sugerida para as imagens no cabeçalho */
+  height: 100px; /* Altura sugerida para as imagens no cabeçalho */
+  object-fit: contain; /* Garante que a imagem caiba sem cortar */
+  filter: grayscale(100%); /* Opcional: para logos que combinam com o design */
+  transition: filter 0.3s ease;
+}
+
+.header-realizacao .realizacao-logos img:hover {
+  filter: grayscale(0%); /* Opcional: tira o grayscale no houver */
+}
+
+/* Seção Destaque (HOME) */
+.destaque {
+  background: #fff;
+}
+
+.destaque .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.destaque .texto h1 {
+  color: #ce1126;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.destaque p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Imagem principal da seção Destaque */
+.imagem-destaque {
+  max-width: 100%; /* Garante que a imagem se ajuste ao contêiner */
+  height: auto;    /* Mantém a proporção */
+  display: block;  /* Remove espaço extra abaixo da imagem */ /* Padding para a imagem em telas maiores */
+  max-height: 600px; /* Altura máxima da imagem desktop (1920x600) */
+  object-fit: cover; /* Ajusta a imagem dentro da sua caixa, sem cortar */
+}
+
+/* Seção Sobre (INFO) */
+.sobre {
+  background: #dcf3f8;
+  color: #111;
+  padding: 3rem 2rem;
+}
+
+.sobre h2 {
+  margin-bottom: 1.5rem;
+  color: #ce1126;
+  font-size: 2rem;
+}
+
+.sobre p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.sobre a {
+  color: #003366;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.sobre a:hover {
+  color: #001a33;
+}
+
+/* Modais (Pop-ups) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  color: #ce1126;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  margin-bottom: 0.8rem;
+  text-align: justify;
+}
+
+.fechar {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.fechar:hover {
+  color: #333;
+}
+
+/* Seção Patrocinadores */
+.patrocinadores {
+  background: #f2f2f2;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.patrocinadores h2 {
+  color: #ce1126;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.categoria-container {
+  margin-bottom: 1.5rem;
+}
+
+.categoria-titulo {
+  background: #ce1126;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoria-titulo:hover {
+  background-color: #910e1c;
+}
+
+.categoria-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.categoria-logos.hidden {
+  height: 0;
+  padding: 0;
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  border: none;
+}
+
+.categoria-logos img {
+  max-height: 60px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  padding: 5px;
+}
+
+.categoria-logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* Seção Equipe */
+.equipe {
+  background: #910e1c;
+  color: white;
+  padding: 3rem 2rem;
+}
+
+.equipe h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center; /* Padrão desktop */
+  max-width: 1600px; /* Ajuste para acompanhar o container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipe-content-container {
+  text-align: center; /* Alinha o conteúdo interno à esquerda por padrão */
+}
+
+.equipe h3 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+/* Seção Galeria */
+.galeria {
+  background: #dcf3f8;
+  color: #111;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.galeria h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #ce1126;
+}
+
+.galeria .fotos {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.galeria .fotos figure {
+  margin: 0;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.galeria .fotos img {
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+/* Seção Local e Mapa */
+.local-mapa {
+  background: #f2f2f2;
+  padding: 3rem 2rem;
+  color: #111;
+  text-align: center;
+}
+
+.local-mapa h2 {
+  color: #ce1126;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.local-mapa p {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.mapa-frame {
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 460px;
+  max-width: 100%; /* Altura padrão para desktop */
+  overflow: hidden; /* Garante que o iframe não vaze */
+}
+
+.mapa-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+/* Modal de Imagens (para Galeria) */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-image {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)}
+  to {transform: scale(1)}
+}
+
+.close-image-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-image-modal:hover,
+.close-image-modal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-caption {
+  margin: 15px auto 0;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Rodapé (Contato) */
+.contato {
+  background: #111;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.contato h2 {
+  font-size: 40px !important;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.contato a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contato a:hover {
+  color: #ce1126;
+}
+
+.Lucy {
+ font-size: 30px;
+}
+
+.Gab {
+  font-size: 15px;
+  margin-top: 100px;
+  padding-bottom: 20px;
+}
+
+.novo-botao {
+  padding-top: 20px;
+  margin: 10px;
+  font-size: 30px;
+  color: #111;
+  outline: none;
+  font-weight: bold;
+}
+
+.novo-botao:hover {
+  color: #910e1c;
+  cursor: pointer;
+}
+
+#backToTopBtn {
+    display: none;
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 999; 
+    font-size: 24px; 
+    border: none; 
+    outline: none; 
+    background-color: #ce1126; 
+    color: white; 
+    cursor: pointer; 
+    padding: 10px 15px;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, opacity 0.3s ease; 
+    opacity: 30%; 
+}
+
+#backToTopBtn:hover {
+    background-color: #a00d1d; 
+    opacity: 1; 
+}
+
+/*
+--- MEDIA QUERIES PARA RESPONSIVIDADE ---
+*/
+
+/* Para telas entre 769px e 1024px (Tablet ou Laptops pequenos) */
+@media (min-width: 1024px) {
+  .container {
+      padding: 1.5rem; /* Um pouco menos de padding para telas médias */
+      width: 92%; /* Ocupa um pouco mais da largura */
+  }
+
+  .menu nav .menu-main-link,
+  .menu nav a[href="#local"] {
+      font-size: 1.15rem; /* Diminui a fonte do menu para não quebrar linha */
+      margin-left: 1rem;
+  }
+
+  .destaque .texto h1 {
+      font-size: 2.2rem;
+  }
+
+  .destaque p {
+      font-size: 1.1rem;
+  }
+
+  .imagem-destaque {
+      max-height: 400px; /* Altura máxima da sua imagem de tablet (1100x400) */
+      padding-left: 15px; /* Ajusta o padding para telas médias */
+  }
+
+  .sobre h2,
+  .patrocinadores h2,
+  .equipe h2,
+  .galeria h2,
+  .local-mapa h2,
+  .contato h2 {
+      font-size: 1.8rem;
+  }
+
+  .mapa-frame {
+      height: 400px;
+  }
+}
+
+  .header-realizacao {
+      margin-left: 1.5rem; /* Menos margem em telas médias */
+  }
+
+  .header-realizacao .realizacao-logos img {
+      width: 70px; /* Reduz um pouco as imagens */
+      height: 70px;
+  }
+
+/* Para telas até 768px (Mobile) */
+@media (max-width: 768px) {
+  .container {
+      padding: 1rem; 
+      width: 95%; 
+  }
+  .menu .container {
+    flex-direction: column; 
+    align-items: center;
+}
+
+.menu .logo {
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 100px;
+}
+
+.menu nav {
+    flex-direction: column; 
+    width: 100%; 
+    margin: 0; 
+    flex-grow: 0; 
+}
+
+.header-realizacao {
+    display: none;
+}
+
+  .menu nav .menu-main-link,
+  .menu nav a[href="#local"] {
+      margin: 0;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      width: 100%;
+  }
+
+  .menu-item-dropdown {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+  }
+
+  .submenu-content {
+      position: static;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0;
+      background-color: #f2f2f2;
+      padding: 0.2rem 0;
+      margin-top: 5px;
+  }
+
+  .submenu-content a {
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      text-align: center;
+  }
+
+    .menu .container {
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */ /* Remova ou ajuste se causar problemas de alinhamento */
+    }
+
+    .menu .logo {
+        margin-bottom: 1rem;
+    }
+
+    /* Esconde o bloco de Realização em telas muito pequenas ou reposiciona se houver espaço */
+    .header-realizacao {
+        /* Para esconder completamente no mobile: */
+        display: none;
+    }
+
+  .destaque .container {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 1.5rem; /* Ajusta o gap para mobile */
+  }
+
+  .destaque .texto h1 {
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
+  }
+
+  .destaque p {
+      font-size: 1rem;
+  }
+
+  .imagem-destaque {
+      max-height: 300px; /* Altura máxima da sua imagem mobile (768x300) */
+      padding-left: 0; /* Remove padding lateral em mobile */
+      margin: 0 auto;  /* Centraliza a imagem no bloco */
+  }
+
+  .sobre h2,
+  .patrocinadores h2,
+  .galeria h2,
+  .local-mapa h2,
+  .contato h2 {
+      font-size: 1.7rem;
+  }
+
+  .equipe h2 {
+      text-align: center; /* Centraliza o título da equipe no mobile */
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+  }
+
+  .equipe-content-container {
+      text-align: center; /* Centraliza o conteúdo da equipe no mobile */
+  }
+
+  .equipe h3 {
+      font-size: 1.2rem;
+  }
+
+  .galeria .fotos img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .mapa-frame {
+      height: 350px; /* Reduz a altura do mapa em mobile */
+  }
+
+  .modal-content {
+      width: 95%;
+      padding: 1.5rem;
+  }
+
+  .modal-content h3 {
+      font-size: 1.5rem;
+  }
+
+  .categoria-titulo {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+  }
+
+  .categoria-logos img {
+      max-height: 45px;
+  }
+  .close-image-modal {
+      font-size: 30px;
+      top: 10px;
+      right: 20px;
+  }
+  .image-caption {
+      font-size: 1rem;
+      width: 95%;
+  }
+
+
+  #backToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        font-size: 20px;
+        padding: 8px 12px;
+  }
+}
+
+/* Para telas até 480px (Mobile muito pequeno) */
+@media (max-width: 480px) {
+  .menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+
+  .menu nav a {
+      margin: 0;
+      font-size: 1rem;
+  }
+
+  .destaque .texto h1 {
+      font-size: 1.5rem;
+  }
+
+  .destaque p {
+      font-size: 0.9rem;
+  }
+
+  .imagem-destaque {
+      max-height: 190px; /* Altura máxima da sua imagem para mobile muito pequeno (480x190) */
+  }
+
+  .modal-content {
+      padding: 1rem;
+  }
+
+  .modal-content h3 {
+      font-size: 1.3rem;
+  }
+
+  .mapa-frame {
+      height: 280px; /* Reduz ainda mais a altura do mapa */
+  }
+}
+
+  

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maratona SBC 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="menu">
+        <div class="container">
+            <img src="imagens/imagens-geral/logo-maratona.png" alt="Logo Maratona" class="logo">
+            <nav>
+                <div class="menu-item-dropdown">
+                    <a href="#home" class="menu-main-link" data-dropdown="homeDropdown">HOME</a>
+                    <div id="homeDropdown" class="submenu-content">
+                        <a href="#sobre-maratona" class="submenu-link">Sobre a Maratona</a>
+                        <a href="#final-br-2025" class="submenu-link">Final BR 2025</a>
+                    </div>
+                </div>
+                <div class="menu-item-dropdown">
+                    <a href="#patrocinio" class="menu-main-link" data-dropdown="patrocinioDropdown">PATROCÍNIO</a>
+                    <div id="patrocinioDropdown" class="submenu-content">
+                        <a href="#equipe" class="submenu-link">Equipe</a>
+                    </div>
+                </div>
+                <div class="menu-item-dropdown">
+                    <a href="#galeria" class="menu-main-link" data-dropdown="infoDropdown">INFO</a>
+                    <div id="infoDropdown" class="submenu-content">
+                        <a href="#contato" class="submenu-link">Contato</a>
+                        <a href="imagens/imagens-geral/Cronograma 2025 - 30° Maratona de Prog..pdf" id="downloadProgramacao" class="submenu-link">Programação</a>
+                    </div>
+                </div>
+                <div class="header-realizacao">
+                  <p class="realizacao-titulo">Realização</p>
+                  <div class="realizacao-logos">
+                      <a href="https://www.fecap.br/" target="_blank" rel="noopener noreferrer"><img src="imagens/imagens-geral/logo-fecap.png" alt="Realização 1"></a>
+                      <a href="https://maratona.sbc.org.br/sobre/index.html" target="_blank" rel="noopener noreferrer"><img src="imagens/imagens-geral/logo-sbc.png" alt="Realização 2"></a>
+                  </div>
+              </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="destaque">
+        <picture>
+          <source srcset="imagens/imagens-geral/maior.png" media="(min-width: 1100px)">
+          <source srcset="imagens/imagens-geral/media.png" media="(max-width: 1099px)">
+          <source srcset="imagens/imagens-geral/menor.png" media="(max-width: 768px)">
+          <img src="imagens/imagens-geral/maior.png" alt="cartaz v3" class="imagem-destaque">
+        </picture>
+    </section>
+
+    <section id="info" class="sobre">
+        <div class="container">
+            <h2 id="sobre-maratona">SOBRE A MARATONA</h2>
+            <p>A maratona SBC de Programação é uma competição nacional que reúne estudantes de Computação em uma batalha contra o tempo para resolver problemas complexos com criatividade, estratégia e trabalho em equipe.</p>
+            <p>Várias instituições de ensino superior de todo o Brasil desenvolvem competições locais para escolherem seus melhores times para competirem na Maratona SBC de Programação. Os melhores representam suas instituições na Final Brasileira da competição.</p>
+            <a href="#" id="abrirModalMaratona">Saiba mais sobre a Maratona...</a>
+
+            <h2 id="final-br-2025">FINAL BRASILEIRA 2025</h2>
+            <p>Depois de 10 anos, a Final Brasileira da Maratona SBC de Programação volta para cidade de São Paulo e, com muita honra, São Paulo recebe a 30ª MARATONA SBC DE PROGRAMAÇÃO. </p>
+            <p>São 30 anos promovendo o desenvolvimento da comunidade voltada para computação em todo território nacional, 65 times representando todos os estados do Brasil e mais de 40 instituições do ensino superior. </p>
+            <a href="#" id="abrirModalFinal">Saiba mais sobre a Final Brasileira...</a>
+        </div>
+    </section>
+
+    <div id="modalMaratona" class="modal">
+        <div class="modal-content">
+            <span class="fechar" data-modal="modalMaratona">×</span>
+            <h3>SOBRE A MARATONA</h3>
+            <p>A maratona SBC de Programação é uma competição nacional que reúne estudantes de Computação em uma batalha contra o tempo para resolver problemas complexos com criatividade, estratégia e trabalho em equipe.</p>
+            <p>Várias instituições de ensino superior de todo o Brasil desenvolvem competições locais para escolherem seus melhores times para competirem na Maratona SBC de Programação. Os melhores representam suas instituições na Final Brasileira da competição. </p>
+            <p>Os melhores times selecionados representam o Brasil nas finais internacionais em duas etapas: a Final Latino-Americana do evento, a "Programadores de América" onde são selecionados os times que representam a América Latina nas finais mundiais do ICPC. </p>
+            <p>O ICPC conta com mais de 400.000 alumni e, nos últimos anos, reúne participantes de mais de 100 países, 3.500 universidades e 75.000 competidores e voluntários. Na América Latina já tivemos mais de 100.000 participações de estudantes na regional, dos quais, aproximadamente um terço são brasileiros. </p>
+            <p>Os times são compostos por três estudantes e um treinador (coach) que tentarão resolver, durante cinco horas, o maior número possível dos dez ou mais problemas fornecidos. Eles têm à sua disposição apenas um computador e material impresso (livros, listagens, manuais etc.) para vencer a batalha contra o relógio e a prova proposta. </p>
+            <p>Os competidores do time devem colaborar para descobrir os problemas mais fáceis, projetar os testes e construir as soluções que sejam aprovadas pelos juízes da competição. Alguns dos problemas requerem apenas compreensão, outros conhecimentos de técnicas mais sofisticadas e alguns podem ser realmente muito desafiadores de serem resolvidos. </p>
+        </div>
+    </div>
+
+    <div id="modalFinal" class="modal">
+        <div class="modal-content">
+            <span class="fechar" data-modal="modalFinal">×</span>
+            <h3>FINAL BRASILEIRA 2025</h3>
+            <p>Depois de 10 anos, a Final Brasileira da Maratona SBC de Programação volta para cidade de São Paulo e, com muita honra, São Paulo recebe a 30ª MARATONA SBC DE PROGRAMAÇÃO. </p>
+            <p>São 30 anos promovendo o desenvolvimento da comunidade voltada para computação em todo território nacional, 65 times representando todos os estados do Brasil e mais de 40 instituições do ensino superior. </p>
+            <p>Com muito orgulho, a FECAP é a realizadora oficial desta edição, já tendo organizado a etapa regional em 2024. </p>
+            <p>A Fundação Escola de Comércio Álvares Penteado (FECAP) é uma instituição brasileira de ensino superior, sem fins lucrativos, cujo campo de estudo é gestão de negócios e, agora, tecnologia. Fundada em 02 de junho de 1902, a FECAP detém a mais antiga certificação de utilidade pública do Brasil, desde 1915. A instituição também foi a primeira a abrir os cursos de Economia (1934) e Contabilidade (1939) no país. </p>
+            <p>A FECAP oferece cursos de bacharelado nas áreas de Administração, Análise e Desenvolvimento de Sistemas, Ciência da Computação, Ciências Contábeis, Ciências Econômicas, Contabilidade para Graduados, Publicidade e Propaganda, Relações Internacionais, Relações Públicas e Secretariado e Assessoria Executiva. </p>
+            <p>Na Pós-Graduação Lato Sensu, são oferecidos cursos ligados às áreas de Contabilidade, Gestão, Finanças e MBA com foco no desenvolvimento profissional. Na Pós-Graduação Stricto Sensu são oferecidos o já tradicional Mestrado em Ciências Contábeis e o conceituado Mestrado Profissional em Administração. </p>
+            <p>Concomitante ao Ensino Médio, o Colégio FECAP oferece Ensino Técnico em diversas áreas. Desde o tradicional técnico em Administração até o técnico em Programação de Jogos, Inteligência Artificial e Cyber Segurança. </p>
+            <p>O Colégio e o Centro Universitário, mantidos pela Fundação Escola de Comércio Álvares Penteado – FECAP, são certificados como Entidades Beneficentes de Assistência Social na área da educação. </p>
+        </div>
+    </div>
+
+    <section id="patrocinio" class="patrocinadores">
+        <h2>PATROCÍNIO</h2>
+        <div class="container">
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="mundial">MUNDIAL</button>
+                <div id="mundial" class="categoria-logos hidden">
+                    <img src="imagens/logos/huawei.png" alt="Huawei">
+                    <img src="imagens/logos/jetbrains.png" alt="JetBrains">
+                </div>
+            </div>
+
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="diamante">DIAMANTE</button>
+                <div id="diamante" class="categoria-logos hidden">
+                    <img src="imagens/logos/incognia.png" alt="Incognia">
+                    <img src="imagens/logos/vtex.png" alt="VTEX">
+                    <img src="imagens/logos/nubank.png" alt="Nubank">
+                </div>
+            </div>
+
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="ouro">OURO</button>
+                <div id="ouro" class="categoria-logos hidden">
+                    <img src="imagens/logos/instituto-criativo.png" alt="Instituto Criativo">
+                </div>
+            </div>
+
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="prata">PRATA</button>
+                <div id="prata" class="categoria-logos hidden">
+                    <img src="imagens/logos/alura.png" alt="Alura">
+                </div>
+            </div>
+
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="bronze">BRONZE</button>
+                <div id="bronze" class="categoria-logos hidden">
+                    <img src="imagens/logos/aphabot.png" alt="Alphabot">
+                </div>
+            </div>
+
+            <div class="categoria-container">
+                <button class="categoria-titulo" data-categoria="apoio">APOIO</button>
+                <div id="apoio" class="categoria-logos hidden">
+                    <img src="imagens/logos/capes.png" alt="Capes">
+                    <img src="imagens/logos/cnpq.png" alt="CNPq">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="equipe">
+        <h2>EQUIPE</h2>
+        <div class="container equipe-content-container">
+            <h3>ORGANIZAÇÃO NACIONAL:</h3>
+            <img src="imagens/imagens-geral/org-2.png" alt="org-Nacional">
+            <h3>ORGANIZAÇÃO LOCAL:</h3>
+            <img src="imagens/imagens-geral/org-1.png" alt="org-Local">
+        </div>
+    </section>
+
+    <section id="galeria" class="galeria">
+        <h2>HOTEL NIKKEY / HOTEL LECQUES / FECAP</h2>
+        <div class="fotos">
+            <figure>
+                <img src="imagens/imagens-geral/imagens-locais/hotel-nikkey.webp" alt="Hotel Nikkey">
+                <figcaption>Hotel Nikkey</figcaption>
+            </figure>
+            <figure>
+                <img src="imagens/imagens-geral/imagens-locais/hotel-lecques.webp" alt="Hotel Lecques">
+                <figcaption>Hotel Lecques</figcaption>
+            </figure>
+            <figure>
+                <img src="imagens/imagens-geral/imagens-locais/fecap.webp" alt="FECAP">
+                <figcaption>FECAP</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="local" class="local-mapa">
+        <div class="container">
+            <h2>LOCAL DO EVENTO</h2>
+            <p>Fundação Escola de Comércio Álvares Penteado (FECAP)<br>
+                Av. da Liberdade, 532 - Liberdade, São Paulo - SP, 01502-001</p>
+            <div class="mapa-frame">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3120178168497!2d-46.639538089712254!3d-23.557234778714264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a8b4d648f9%3A0x862df06cefe8bc3e!2sFECAP%20-%20Funda%C3%A7%C3%A3o%20Escola%20de%20Com%C3%A9rcio%20%C3%81lvares%20Penteado%20-%20Campus%20Liberdade!5e0!3m2!1spt-BR!2sbr!4v1748164284933!5m2!1spt-BR!2sbr" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"> 
+              </iframe>
+            </div>
+            <br>
+            <a href="imagens/imagens-geral/cronograma-2025.pdf" id="downloadProgramacaoBotaoMapa"  class="novo-botao" download="Cronograma 2025 - 30° Maratona de Prog..pdf"> Acessar Programação </a>
+        </div>
+    </section>
+
+    <div id="imageModal" class="image-modal">
+        <span class="close-image-modal">×</span>
+        <img class="modal-image" id="modalImage">
+        <div id="imageCaption" class="image-caption"></div>
+    </div>
+
+    <footer id="contato" class="contato">
+        <h2>CONTATO</h2>
+        <p class="Lucy" ><a href="mailto:lucymari@gmail.com">lucymari@gmail.com</a><br>(11) 99712-1874</p>
+        <h3 class="Gab" >Desenvolvido por: <a href="https://www.linkedin.com/in/gabriel-amorim-960a08217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">Gabriel Amorim</a></h3>
+    </footer>
+
+    <button id="backToTopBtn" title="Voltar ao Início"> Voltar </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
