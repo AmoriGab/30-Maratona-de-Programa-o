@@ -644,25 +644,26 @@ body {
 
 /* Para telas até 768px (Mobile) */
 @media (max-width: 768px) {
-  .container {
-      padding: 1rem; 
-      width: 95%; 
-  }
-  .menu .container {
+.container {
+    padding: 1rem;  
+}
+
+.menu .container {
     flex-direction: column; 
     align-items: center;
+    margin-left: 0px;
 }
 
 .menu .logo {
     margin-bottom: 1rem;
     width: 100px;
-    height: 100px;
+    height: 100px; 
 }
 
 .menu nav {
     flex-direction: column; 
     width: 100%; 
-    margin: 0; 
+    margin-left: 90px; 
     flex-grow: 0; 
 }
 
