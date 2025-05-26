@@ -707,11 +707,7 @@ body {
         /* justify-content: center; */ /* Remova ou ajuste se causar problemas de alinhamento */
     }
 
-    .menu .logo {
-        margin-bottom: 1rem;
-    }
-
-    /* Esconde o bloco de Realização em telas muito pequenas ou reposiciona se houver espaço */
+    
     .header-realizacao {
         /* Para esconder completamente no mobile: */
         display: none;
@@ -807,6 +803,12 @@ body {
 
 /* Para telas até 480px (Mobile muito pequeno) */
 @media (max-width: 480px) {
+  
+  .menu .container {
+    visibility: unset;
+    margin-left: -15px;
+  }
+
   .menu nav {
       display: flex;
       flex-direction: column;
